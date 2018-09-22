@@ -58,8 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 result = RESULT_OK;
             }
             else if (resultCode == RESULT_CANCELED) {
-                contact_name = data.getStringExtra("res_string");
-                result = RESULT_CANCELED;
+                if (data != null) {
+                    contact_name = data.getStringExtra("res_string");
+                    result = RESULT_CANCELED;
+                }
             }
 
         }
